@@ -1,7 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render_to_response
 
 from django.http import HttpResponse
-from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 from rest_framework import viewsets
 from students.serializers import StudentSerializer
@@ -15,4 +14,4 @@ class StudentViewSet(viewsets.ModelViewSet):
     serializer_class = StudentSerializer
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+     return render_to_response('index.html')
